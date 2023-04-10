@@ -18,23 +18,16 @@ const App = () => {
       `https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}`);
       const data = await response.json();
       console.log(data.hits);
-      setRecipes(data.hits);
-    
+      setRecipes(data.hits);    
   }
-  
-  
   const updateValue = e =>{
     setSearch(e.target.value);
-
   }
   const getSearch = e =>{
     e.preventDefault();
     setQuery(search);
     setSearch('');
-  }
-
-  
-  
+  }  
   return (
     <div className='App'>
       <form onSubmit={getSearch} className='search-form' >
